@@ -8,11 +8,11 @@ RUN go mod download
 
 COPY *.go ./
 
-RUN chgrp -R 0 /api && \
-    chmod -R g+rwX /api
+RUN chgrp -R 0 /app && \
+    chmod -R g+rwX /app
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o /api
+RUN CGO_ENABLED=0 GOOS=linux go build -o /app
 
 EXPOSE 8080
 
-CMD [ "/api" ]
+CMD [ "/app" ]
