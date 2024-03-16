@@ -21,14 +21,14 @@ steps:
   inputs:
     connectionType: 'OpenShift Connection Service'
     openshiftService: 'openshift'
-    version: '4.14'
+    version: '4.14.12'
     cmd: 'oc new-app https://github.com/wenshangbei/simple-app.git'
     ignoreFlag: true
 - task: oc-cmd@3
   inputs:
     connectionType: 'OpenShift Connection Service'
     openshiftService: 'openshift'
-    version: '4.15'
+    version: '4.14.12'
     cmd: 'oc expose svc simple-app'
     ignoreFlag: true
   displayName: Create route
@@ -36,12 +36,12 @@ steps:
   inputs:
     connectionType: 'OpenShift Connection Service'
     openshiftService: 'openshift'
-    version: '4.14'
+    version: '4.14.12'
     cmd: 'oc start-build simple-app --follow'
   displayName: Start new build
 - task: oc-cmd@3
   inputs:
     connectionType: 'OpenShift Connection Service'
     openshiftService: 'openshift'
-    version: '4.14'
+    version: '4.14.12'
     cmd: 'oc status'
