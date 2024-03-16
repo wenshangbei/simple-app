@@ -14,7 +14,7 @@ steps:
   inputs:
     connectionType: 'OpenShift Connection Service'
     openshiftService: 'openshift'
-    version: '4.14'
+    version: '4.14.12'
     cmd: 'oc project default'
   displayName: Switch to myapp project
 - task: oc-cmd@3
