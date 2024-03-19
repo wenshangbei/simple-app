@@ -45,3 +45,10 @@ steps:
     openshiftService: 'openshift'
     version: '4.14.12'
     cmd: 'oc status'
+
+- task: oc-cmd@3
+  inputs:
+    connectionType: 'OpenShift Connection Service'
+    openshiftService: 'openshift'
+    version: '4.14.12'
+    cmd: 'oc get pods'
